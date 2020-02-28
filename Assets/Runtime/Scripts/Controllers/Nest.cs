@@ -11,7 +11,7 @@ public class Nest : Container
     private void Awake()
     {
         maxItems = 17;
-        items = new List<GameObject>();
+        currentItems = new List<GameObject>();
         startPos = new Vector2(-7.75f, -3.5f);
         offset = new Vector2(1f, 0);
         vectorPositions = new Vector2[maxItems];
@@ -35,9 +35,9 @@ public class Nest : Container
     public Vector2 NextPos(Vector2 currentPos)
     {
         Vector2 temp = currentPos;
-        if (IsPlaceable())
+        if (IsContainable())
         {
-            temp = vectorPositions[items.Count-1];
+            temp = vectorPositions[currentItems.Count-1];
         }
 
         return temp;
@@ -48,7 +48,7 @@ public class Nest : Container
         PlaceItem(obj.gameObject);
         obj.destination = NextPos(transform.position);
 
-        if (IsPlaceable())
+        if (IsContainable())
         {
             obj.collected = true;
             obj.transform.parent = transform;

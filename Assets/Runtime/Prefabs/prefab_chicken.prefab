@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 3315250120542306332}
   - component: {fileID: 3315250120542306328}
   - component: {fileID: 830450499014614765}
-  - component: {fileID: 8796293611172162671}
-  m_Layer: 0
+  - component: {fileID: 6774631100750859125}
+  m_Layer: 8
   m_Name: prefab_chicken
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 3315250120542306323}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -119,8 +119,8 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 4.85
---- !u!114 &8796293611172162671
+  m_Radius: 1.515625
+--- !u!114 &6774631100750859125
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -129,14 +129,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 3315250120542306323}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5497307fd59b8f24bb98e0fcf4caec63, type: 3}
+  m_Script: {fileID: 11500000, guid: 51c8bf72835ce0c45a95906c2fe9785d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  direction: {x: 0, y: 0}
-  speed: 0
-  castOffset: 0.5
-  rbExists: 0
-  bounce: 0
-  move: 0
-  egg: {fileID: 0}
-  secsToLay: 5
+  spawnItem: {fileID: 3315250120542306323, guid: dfbea232f396e934499b56eb31f1c825,
+    type: 3}
+  destroyOnSpawn: 0

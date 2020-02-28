@@ -64,7 +64,7 @@ public class Egg : MovementController
     {
         hatch = true;
         collected = false;
-        nest.items.Remove(gameObject);
+        nest.currentItems.Remove(gameObject);
         transform.parent = null;
         waypoints[0] = transform.position + (Vector3.left * 0.04f);
         waypoints[1] = transform.position + (Vector3.right * 0.04f);
