@@ -5,17 +5,17 @@ using UnityEngine;
 //Extend (HAS-A)
 public class Spawner : MonoBehaviour
 {
-    public GameObject spawnItem;
-    public bool destroyOnSpawn;
+    private GameObject spawnItem;
+    private bool destroyOnSpawn;
 
     //TODO: check errors and handle
 
-    public bool IsActive()
+    private bool IsActive()
     {
         return spawnItem != null;
     }
 
-    public void Spawn()
+    private void Spawn()
     {
         if (IsActive())
         {

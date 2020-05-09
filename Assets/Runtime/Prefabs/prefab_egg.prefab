@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 3315250120542306333}
   - component: {fileID: 3315250120542306332}
   - component: {fileID: 830450499014614765}
-  - component: {fileID: 3771185234033871602}
   m_Layer: 9
   m_Name: prefab_egg
   m_TagString: Untagged
@@ -71,12 +70,13 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: cc361a425addf9843a99b082cd6e6f9c, type: 3}
+  m_Sprite: {fileID: -7276901690378276138, guid: e39acafd32d55da4bb0f37b415d8d26f,
+    type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.6, y: 0.7}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -97,19 +97,4 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.703125
---- !u!114 &3771185234033871602
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3315250120542306323}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 51c8bf72835ce0c45a95906c2fe9785d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  spawnItem: {fileID: 3315250120542306323, guid: 6978e9330eb2bcd49b0a706b34bb842b,
-    type: 3}
-  destroyOnSpawn: 1
+  m_Radius: 0.35

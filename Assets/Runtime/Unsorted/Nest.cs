@@ -8,7 +8,7 @@ public class Nest : Container
     public Vector2 offset;
     public Vector2 startPos;
 
-    private void Awake()
+    /* private void Awake()
     {
         maxItems = 17;
         currentItems = new List<GameObject>();
@@ -63,5 +63,5 @@ public class Nest : Container
         {
             temp[i].OnCollect();
         }
-    }
+    }*/
 }

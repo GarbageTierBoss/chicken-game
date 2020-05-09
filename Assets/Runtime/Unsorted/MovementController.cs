@@ -18,7 +18,7 @@ public class MovementController : MonoBehaviour
     void Awake()
     {
         speed = speed == 0 ? 2 : speed;    // if speed == 0, then make speed 2
-        direction = MovementHandle2D.SetRandomDir();
+        direction = MovementHandle2D.RandomUnitVector();
         Debug.Log(direction);
         Debug.Log(direction.magnitude);
     }
@@ -39,7 +39,7 @@ public class MovementController : MonoBehaviour
 
     void OnCollisionStay2D(Collision2D collision)
     {
-        direction = bounce ? MovementHandle2D.SetRandomDir() : direction;
+        direction = bounce ? MovementHandle2D.RandomUnitVector() : direction;
     }
 
     void OnMouseDrag()
@@ -58,11 +58,11 @@ public class MovementController : MonoBehaviour
     {
         if (rbExists)
         {
-            rb.position = MovementHandle2D.GetPosInDir(rb.position, direction, speed);
+            rb.position = MovementHandle2D.NextFixedPosition(rb.position, direction, speed);
         }
         else
         {
-            transform.position = MovementHandle2D.GetPosInDir(transform.position, direction, speed);
+            transform.position = MovementHandle2D.NextFixedPosition(transform.position, direction, speed);
         }
     }
 }

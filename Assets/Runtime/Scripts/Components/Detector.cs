@@ -5,16 +5,16 @@ using UnityEngine;
 //Extend (HAS-A)
 public class Detector : MonoBehaviour
 {
-    public float range = 0;
-    public string layer;
+    private float detectionRange = 0;
+    private string detectionLayer;
 
-    public float interval = 0;
+    //private float detectInterval = 0; should be handled outside
 
-    public int maxDetect = 3;
-    public int resultCount = 0;
+    private int maxItemsToDetect = 3;
+    private int numberDetected = 0;
 
-    public Vector3 offset = Vector3.zero;
-    public Collider2D[] inRange;
+    private Vector3 offset = Vector3.zero;
+    private Collider2D[] itemsDetected;
 
     //TODO: Initialize()
     //TODO: Rigidbody2D version
@@ -24,20 +24,20 @@ public class Detector : MonoBehaviour
 
     public bool IsDetecting()
     {
-        return range > 0 && interval >= 0;
+        return detectionRange > 0;//&& detectInterval >= 0;
     }
 
     public virtual void Detect()
     {
-        resultCount = Physics2D.OverlapCircleNonAlloc(transform.position + offset, range, inRange, LayerMask.GetMask(layer));
+        numberDetected = Physics2D.OverlapCircleNonAlloc(transform.position + offset, detectionRange, itemsDetected, LayerMask.GetMask(detectionLayer));
     }
 
-    public IEnumerator DetectOnInterval()
+    /*public IEnumerator DetectOnInterval()
     {
-        yield return new WaitForSeconds(interval);
+        yield return new WaitForSeconds(detectInterval);
 
         Detect();
 
         StartCoroutine(DetectOnInterval());
-    }
+    }*/
 }

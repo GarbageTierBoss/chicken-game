@@ -30,7 +30,7 @@ public class Egg : MovementController
     {
         if (collected)
         {
-            transform.position = MovementHandle2D.GetPosToDes(transform.position, destination, speed);
+            transform.position = MovementHandle2D.NextPositionTowards(transform.position, destination, speed);
         }
     }
 
@@ -64,7 +64,7 @@ public class Egg : MovementController
     {
         hatch = true;
         collected = false;
-        nest.currentItems.Remove(gameObject);
+        //nest.currentItems.Remove(gameObject);
         transform.parent = null;
         waypoints[0] = transform.position + (Vector3.left * 0.04f);
         waypoints[1] = transform.position + (Vector3.right * 0.04f);
@@ -86,6 +86,6 @@ public class Egg : MovementController
 
     public void OnCollect()
     {
-        nest.EggCollect(GetComponent<Egg>());
+        //nest.EggCollect(GetComponent<Egg>());
     }
 }
